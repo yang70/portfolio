@@ -40,6 +40,6 @@ require "minitest/rails/capybara"
 ## Credit
 This gem instructions were taken directly from the following github repos:
 
-[minitest-rails](https://github.com/blowmage/minitest-rails) \n
+[minitest-rails](https://github.com/blowmage/minitest-rails)
 
 [minitest-rails-capybara](https://github.com/blowmage/minitest-rails-capybara)
