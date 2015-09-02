@@ -41,4 +41,5 @@ require "minitest/rails/capybara"
 This gem instructions were taken directly from the following github repos:
 
 [minitest-rails](https://github.com/blowmage/minitest-rails)
+
 [minitest-rails-capybara](https://github.com/blowmage/minitest-rails-capybara)
