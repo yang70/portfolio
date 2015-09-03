@@ -3,12 +3,11 @@ require "test_helper"
 feature "VisitingTheArticleIndex" do
   scenario "with existing articles, show list" do
     # Given the existing posts
-    article = Article.create(title: "My sample post", body: "The body to my sample post")
-
-    # When I visit /posts
-    visit article_path(article)
+    # When I visit /articles
+    visit articles_path
 
     # Then the existing posts should be loaded
-    page.text.must_include "My sample post"
+    page.text.must_include articles(:post1).title
+    page.text.must_include articles(:post2).title
   end
 end

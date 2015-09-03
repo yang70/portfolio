@@ -1,20 +1,19 @@
+
 require "test_helper"
 
 feature "DeleteExistingArticle" do
   scenario "delete an existing article" do
-    # puts page.methods.sort
-    # Create an article
-    Article.create(title: 'Article for deletion', body: 'Delete this too')
 
-    # Visit articles page and click delete button
-    visit articles_path
-    assert find('p', :last).has_content?, 'Destroy'
-    first(:link, 'Destroy').click
+    # Visit article show page and click delete button
+    article = articles(:post1)
+    visit article_path(article)
+    click_on 'Destroy'
 
     # Verify article was deleted
-    # find('body').has_content? 'destroyed'
+    page.text.must_include 'destroyed'
 
+    # For test to pass, must run with $RAILS_ENV=test rake
     # Verify article no longer in index
-    # page.text.wont_include 'Article for deletion'
+    page.text.wont_include articles(:post1).title
   end
 end

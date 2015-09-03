@@ -2,10 +2,8 @@ require "test_helper"
 
 feature "EditExistingArticle" do
   scenario "edit an existing article" do
-    # Create a new article
-    article = Article.create(title: 'My new article', body: 'Body of my new article')
-
-    # Visit the index page and click the edit button
+    # Visit the index page and click the edit button of existing article
+    article = articles(:post1).id
     visit article_path(article)
     click_on 'Edit'
 
