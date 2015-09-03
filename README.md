@@ -37,6 +37,20 @@ Then the following was added to `test/test_helper.rb`
 require "minitest/rails/capybara"
 ```
 
+There is a functioning feature test suite that is currenlty passing.
+
+## Special Notes
+
+Continuing to add the ability to make notes by modifying Rails scaffolding, see screenshot:
+
+![Screenshot 1](app/assets/images/articles_screenshot.png)
+
+There is a bug in the testing of the `#destroy` action where it seems to jump out of the test environment.  Currently it's passing by forcing the test environment with the following command:
+
+```console
+RAILS_ENV=test rake
+```
+
 ## Credit
 This gem instructions were taken directly from the following github repos:
 
