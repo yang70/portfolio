@@ -1,0 +1,24 @@
+<div class="fixed">
+  <!-- nav bar left -->
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><%= link_to "Matthew G Yang", root_path %></h1></h1>
+      </li>
+      <!-- menu button on narrow browswer -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- nav bar right menu -->
+      <ul class="right">
+        <li class="active"><%= link_to "Home", root_path %></li>
+        <li class=""><%= link_to "About", '#' %></li>
+        <li class=""><%= link_to "Resume", '#' %></li>
+        <li class=""><%= link_to "Projects", '#' %></li>
+        <li class=""><%= link_to "Journal", articles_path %></li>
+        <li class=""><%= link_to "Contact", '#' %></li>
+      </ul>
+    </section>
+  </nav>
+</div>
