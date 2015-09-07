@@ -7,6 +7,8 @@ By [Matthew Yang](http://www.matthewgyang.com).
 ## Description
 **Portfolio** This is a portfolio Rails application
 
+It includes a welcome page with links to features including the blog/journal.
+
 ## Specifications
 
 App was created without the default test suite with this command:
@@ -52,6 +54,8 @@ RAILS_ENV=test rake
 ```
 
 ## Credit
+**Styling The basic HTML structure and CSS is from a Zurb Foundation template located [here](http://foundation.zurb.com/templates/portfolio-theme.html)
+
 This gem instructions were taken directly from the following github repos:
 
 [minitest-rails](https://github.com/blowmage/minitest-rails)
