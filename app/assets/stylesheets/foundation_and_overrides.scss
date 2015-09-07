@@ -1540,7 +1540,7 @@ body {
 }
 }
 .hero {
-    background: url(<%= image_path "hero_name" %>);
+    background: url("https://s3-us-west-2.amazonaws.com/yangportfoliobucket/layoutpics/hero_name.png");
     background-size: cover;
     box-shadow: inset 0px 0px 0 2000px rgba(0, 0, 0, 0.15);
     height: 60%;

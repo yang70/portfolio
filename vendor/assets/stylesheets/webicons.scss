@@ -15,7 +15,7 @@
 $webicons-icons: f500px github linkedin mail;
 
 // Specify the path to the webicons directory here. Include trailing slash.
-$webicons-url: "webicons/" !default;
+$webicons-url: "https://s3-us-west-2.amazonaws.com/yangportfoliobucket/webicons/" !default;
 
 @each $webicons-icon in $webicons-icons {
   .no-svg .webicon.#{$webicons-icon}       { background: url("#{$webicons-url}webicon-#{$webicons-icon}-m.png"); }
