@@ -6,7 +6,7 @@ feature "VisitingTheArticleIndex" do
     # When I visit /articles
     visit articles_path
 
-    # Then the existing posts should be loaded
+    # The existing posts should be loaded
     page.text.must_include articles(:post1).title
     page.text.must_include articles(:post2).title
   end
