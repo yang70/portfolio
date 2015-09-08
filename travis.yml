@@ -1,0 +1,7 @@
+language: ruby
+rvm:
+  - 2.2.3
+script: RAILS_ENV=test rake
+deploy:
+  provider: heroku
+  api_key:
