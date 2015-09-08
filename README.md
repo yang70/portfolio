@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/yang70/portfolio.svg?branch=master)](https://travis-ci.org/yang70/portfolio)
 # Portfolio - Matthew G. Yang
 
-  ![Logo](https://dl.dropboxusercontent.com/u/69636/2015-08-18%2011.53.43-1.jpg =250x)
+  ![Logo](https://s3-us-west-2.amazonaws.com/yangportfoliobucket/layoutpics/headshot.jpg =250x)
 
 By [Matthew Yang](http://www.matthewgyang.com).
 
