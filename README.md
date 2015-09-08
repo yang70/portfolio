@@ -1,6 +1,7 @@
+[![Build Status](https://travis-ci.org/yang70/portfolio.svg?branch=master)](https://travis-ci.org/yang70/portfolio)
 # Portfolio - Matthew G. Yang
 
-  ![Logo](https://dl.dropboxusercontent.com/u/69636/2015-08-18%2011.53.43-1.jpg)
+  ![Logo](https://dl.dropboxusercontent.com/u/69636/2015-08-18%2011.53.43-1.jpg =250x)
 
 By [Matthew Yang](http://www.matthewgyang.com).
 
@@ -40,6 +41,8 @@ require "minitest/rails/capybara"
 ```
 
 There is a functioning feature test suite that is currenlty passing.
+
+Continuous integration has been implemented with Travis-CI, including adding a status badge to the top of this README
 
 ## Special Notes
 
