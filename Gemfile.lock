@@ -200,10 +200,7 @@ DEPENDENCIES
   minitest-rails-capybara
   minitest-reporters
   pg
-<<<<<<< HEAD
-=======
   puma
->>>>>>> e71065c6fdcc910cbe72926abd21962da30dd96f
   rails (= 4.2.4)
   rails_12factor
   rubocop
@@ -217,4 +214,3 @@ DEPENDENCIES
 
 BUNDLED WITH
    1.10.6
-
