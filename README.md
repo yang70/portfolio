@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/yang70/portfolio.svg?branch=master)](https://travis-ci.org/yang70/portfolio)
 # Portfolio - Matthew G. Yang
-  
+
   <img src="https://s3-us-west-2.amazonaws.com/yangportfoliobucket/layoutpics/headshot.jpg" width="200">
 
 By [Matthew Yang](http://www.matthewgyang.com).
@@ -8,7 +8,7 @@ By [Matthew Yang](http://www.matthewgyang.com).
 ## Description
 **Portfolio** This is a portfolio Rails application
 
-It includes a welcome page with links to features including the blog/journal.
+It includes a welcome page with links to features including the blog, journal and projects.
 
 ## Specifications
 
@@ -18,7 +18,7 @@ App was created without the default test suite with this command:
 rails new portfolio --skip-test-unit
 ```
 
-Then the following gems were added to the gem file:
+Then the following gems were added to the gem file for minitest and capybara:
 
 ```ruby
 gem "minitest-rails"
@@ -34,10 +34,22 @@ group :test do
 end
 ```
 
-Then the following was added to `test/test_helper.rb`
+**Then the following was added to `test/test_helper.rb`**
 
 ```ruby
 require "minitest/rails/capybara"
+```
+
+For colorful tests, added:
+
+```ruby
+require "minitest/reporters"
+Minitest::Reporters.use!
+```
+
+Automatically run rubocop on the project when rake invoked with this line:
+```ruby
+system 'rubocop'
 ```
 
 There is a functioning feature test suite that is currenlty passing.
@@ -50,11 +62,7 @@ Continuing to add the ability to make notes by modifying Rails scaffolding, see 
 
 ![Screenshot 1](app/assets/images/articles_screenshot.png)
 
-There is a bug in the testing of the `#destroy` action where it seems to jump out of the test environment.  Currently it's passing by forcing the test environment with the following command:
-
-```console
-RAILS_ENV=test rake
-```
+Have added the ability to add image url's to the projects resource.
 
 ## Credit
 **Styling The basic HTML structure and CSS is from a Zurb Foundation template located [here](http://foundation.zurb.com/templates/portfolio-theme.html)
@@ -64,3 +72,5 @@ This gem instructions were taken directly from the following github repos:
 [minitest-rails](https://github.com/blowmage/minitest-rails)
 
 [minitest-rails-capybara](https://github.com/blowmage/minitest-rails-capybara)
+
+[minitest-reporters](https://github.com/kern/minitest-reporters)
