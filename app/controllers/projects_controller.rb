@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update]
+  before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
     @projects = Project.all
@@ -31,6 +31,13 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def destroy
+    @project.destroy
+    respond_to do |format|
+      format.html { redirect_to articles_url, notice: 'Success! Project was destroyed.' }
+    end
+  end
+
   def show
   end
 
@@ -41,6 +48,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :technologies_used)
+    params.require(:project).permit(:name, :technologies_used, :image_url)
   end
 end
