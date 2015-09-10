@@ -11,8 +11,22 @@
  * file per style scope.
  *
  *= require_tree .
- *= require_self
  *= require foundation_and_overrides
+ *= require_self
  *= require vendor_application
 
  */
+
+body {
+  padding: 0!important;
+}
+
+#content {
+  margin-top: 40px;
+}
+
+.container {
+  max-width: 990px;
+  width: 100%;
+  margin: 0 auto;
+}

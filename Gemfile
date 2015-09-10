@@ -12,6 +12,8 @@ gem 'minitest-rails'
 gem 'minitest-reporters'
 gem 'foundation-rails'
 gem 'puma'
+gem 'launchy'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug'

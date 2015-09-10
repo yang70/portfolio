@@ -13,4 +13,16 @@ class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
 end
 
+class ActionController::TestCase
+  include Devise::TestHelpers
+end
+
+def sign_in
+    # Log in authorized user
+  visit new_user_session_path
+  fill_in "Email", with: users(:ruby).email
+  fill_in "Password", with: "password"
+  click_on "Log in"
+end
+
 system 'rubocop'

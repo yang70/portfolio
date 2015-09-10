@@ -18,6 +18,12 @@
         <li class=""><%= link_to "Projects", '#' %></li>
         <li class=""><%= link_to "Journal", articles_path %></li>
         <li class=""><%= link_to "Contact", '#' %></li>
+        <% if current_user.present? %>
+          <li class=""><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li class=""><%= link_to "Sign Up", new_user_registration_path %></li>
+          <li class=""><%= link_to "Log In", new_user_session_path %></li>
+        <% end %>
       </ul>
     </section>
   </nav>
