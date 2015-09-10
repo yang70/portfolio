@@ -15,7 +15,7 @@
         <li class="active"><%= link_to "Home", root_path %></li>
         <li class=""><%= link_to "About", '#' %></li>
         <li class=""><%= link_to "Resume", '#' %></li>
-        <li class=""><%= link_to "Projects", '#' %></li>
+        <li class=""><%= link_to "Projects", projects_path %></li>
         <li class=""><%= link_to "Journal", articles_path %></li>
         <li class=""><%= link_to "Contact", '#' %></li>
         <% if current_user.present? %>
