@@ -13,5 +13,9 @@ feature "CreatingNewArticle" do
     # Confirm reroute to new post and it's contents
     page.text.must_include 'Article was successfully created'
     page.text.must_include 'Created a test article'
+
+    # Confirm post attributes the author
+    page.has_css? ".author"
+    page.text.must_include users(:ruby).email
   end
 end
