@@ -16,13 +16,6 @@
  *= require vendor_application
 
  */
-.clearfix:after {
-   content: " ";
-   visibility: hidden;
-   display: block;
-   height: 0;
-   clear: both;
-}
 
 body {
   padding: 0!important;

@@ -1,6 +1,6 @@
 require "test_helper"
 
-feature "As a user, sign up and perform restricted actions" do
+feature "As a new user, successfully sign up" do
   scenario "sign up" do
     # given a registration form
     visit '/'

@@ -2,6 +2,8 @@ require "test_helper"
 
 feature "CreatingNewArticle" do
   scenario "Create a new article, reroute to display" do
+    sign_in
+
     # Visit the new article page
     visit new_article_path
 

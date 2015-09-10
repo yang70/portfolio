@@ -2,6 +2,8 @@
 require "test_helper"
 feature "DeleteExistingArticle" do
   scenario "delete an existing article" do
+    sign_in
+
     # Visit article show page and click delete button
     article = articles(:post1)
     visit article_path(article)
