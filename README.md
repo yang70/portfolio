@@ -10,6 +10,8 @@ By [Matthew Yang](http://www.matthewgyang.com).
 
 It includes a welcome page with links to features including the blog, journal and projects.
 
+The journal includes a user sign up/authentication system by incorporating the [Devise gem](https://github.com/plataformatec/devise).
+
 ## Specifications
 
 App was created without the default test suite with this command:
@@ -67,7 +69,7 @@ Have added the ability to add image url's to the projects resource.
 ## Credit
 **Styling The basic HTML structure and CSS is from a Zurb Foundation template located [here](http://foundation.zurb.com/templates/portfolio-theme.html)
 
-This gem instructions were taken directly from the following github repos:
+These gem instructions were taken directly from the following github repos:
 
 [minitest-rails](https://github.com/blowmage/minitest-rails)
 
