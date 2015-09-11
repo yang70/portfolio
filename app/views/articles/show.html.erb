@@ -15,6 +15,11 @@
   <%= @article.author.email %>
 </p>
 
+<p id="status">
+  <b>Status:</b>
+  <%= @article.published? ? "Published" : "Unpublished" %>
+</p>
+
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %> |
 <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %>

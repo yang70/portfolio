@@ -2,7 +2,7 @@
 require "test_helper"
 feature "DeleteExistingArticle" do
   scenario "delete an existing article" do
-    sign_in
+    sign_in(:ruby)
 
     # Visit article show page and click delete button
     article = articles(:post1)

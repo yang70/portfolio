@@ -2,7 +2,7 @@ require "test_helper"
 
 feature "EditExistingArticle" do
   scenario "edit an existing article" do
-    sign_in
+    sign_in(:ruby)
 
     # Visit the index page and click the edit button of existing article
     article = articles(:post1).id
