@@ -7,5 +7,11 @@ post1:
 post2:
   title: Title for the second
   body: Body for the second
-  author: edit
+  author: editor
   published: true
+
+post3:
+  title: This title is for the third
+  body: Body for the third
+  author: editor
+  published: false
