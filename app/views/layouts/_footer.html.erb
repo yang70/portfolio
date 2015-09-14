@@ -2,11 +2,12 @@
   <div class="large-12 columns">
     <div class="row">
       <div class="large-6 columns">
-        <p>Modified from a <a href="http://foundation.zurb.com/index.html">Zurb Foundation theme.</a></p>
+        <p>Modified from a <a href="http://foundation.zurb.com/index.html">Zurb Foundation theme.</a> <strong>This website and it's features are still under construction!</strong></p>
       </div>
       <div class="large-6 columns">
-        <ul class="inline-list right">
-        </ul>
+        <% if current_user %>
+          <p><strong>Logged in as: </strong><%= current_user.email %>. <strong>Role: </strong><%= current_user.role %></p>
+        <% end %>
       </div>
     </div>
   </div>

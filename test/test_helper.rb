@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start
+
 Rails.env = "test"
 require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
@@ -17,10 +20,10 @@ class ActionController::TestCase
   include Devise::TestHelpers
 end
 
-def sign_in
-    # Log in authorized user
+def sign_in(role = :editor)
+  # Log in authorized user
   visit new_user_session_path
-  fill_in "Email", with: users(:ruby).email
+  fill_in "Email", with: users(role).email
   fill_in "Password", with: "password"
   click_on "Log in"
 end

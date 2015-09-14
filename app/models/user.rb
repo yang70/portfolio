@@ -5,4 +5,26 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :articles, foreign_key: "author_id"
+
+  def author?
+    role == 'author'
+  end
+
+  def editor?
+    role == 'editor'
+  end
+end
+
+class NullUser
+  def editor?
+    false
+  end
+
+  def author?
+    false
+  end
+
+  def id
+    false
+  end
 end

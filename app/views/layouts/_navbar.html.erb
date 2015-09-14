@@ -15,9 +15,9 @@
         <li class="active"><%= link_to "Home", root_path %></li>
         <li class=""><%= link_to "About", '#' %></li>
         <li class=""><%= link_to "Resume", '#' %></li>
-        <li class=""><%= link_to "Projects", projects_path %></li>
-        <li class=""><%= link_to "Journal", articles_path %></li>
         <li class=""><%= link_to "Contact", '#' %></li>
+        <!-- <li class=""><%= link_to "Projects", projects_path %></li> -->
+        <li class=""><%= link_to "Blog", articles_path %></li>
         <% if current_user.present? %>
           <li class=""><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
         <% else %>
