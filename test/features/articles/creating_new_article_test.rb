@@ -30,12 +30,12 @@ feature "Creating New Article as an author" do
 end
 
 feature "Visitors cannot create articles" do
-  scenario "Visit blog as visitor, no new article button appears" do
+  scenario "visitors do not see new article button" do
     visit articles_path
     page.wont_have_link "New Article"
   end
 
-  scenario "unauthenticated site visitors cannot visit new_article_path" do
+  scenario "visitors cannot visit new_article_path" do
     visit new_article_path
     page.must_have_content "You need to sign in or sign up before continuing"
   end
