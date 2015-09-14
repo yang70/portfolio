@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/yang70/portfolio.svg?branch=master)](https://travis-ci.org/yang70/portfolio)
+[![Coverage Status](https://coveralls.io/repos/yang70/portfolio/badge.svg?branch=master&service=github)](https://coveralls.io/github/yang70/portfolio?branch=master)
+
 # Portfolio - Matthew G. Yang
 
   <img src="https://s3-us-west-2.amazonaws.com/yangportfoliobucket/layoutpics/headshot.jpg" width="200">
@@ -11,6 +13,8 @@ By [Matthew Yang](http://www.matthewgyang.com).
 It includes a welcome page with links to features including the blog, journal and projects.
 
 The journal includes a user sign up/authentication system by incorporating the [Devise gem](https://github.com/plataformatec/devise).
+
+
 
 ## Specifications
 
@@ -57,6 +61,10 @@ system 'rubocop'
 There is a functioning feature test suite that is currenlty passing.
 
 Continuous integration has been implemented with Travis-CI, including adding a status badge to the top of this README
+
+Test coverage is now documented with [SimpleCov](https://github.com/colszowka/simplecov)
+
+Test coverage badge on this README from [COVERALLS](https://coveralls.io/)
 
 ## Special Notes
 
