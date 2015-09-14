@@ -1,7 +1,31 @@
 
 require "test_helper"
-feature "DeleteExistingArticle" do
-  scenario "delete an existing article" do
+feature "Delete Existing Article" do
+  scenario "visitors don't see delete links" do
+    visit articles_path
+    page.text.wont_include 'Destroy'
+    visit article_path(articles(:post1))
+    page.text.wont_include 'Destroy'
+  end
+
+  scenario "author's don't see delete links" do
+    sign_in(:author)
+    visit articles_path
+    page.text.wont_include 'Destroy'
+    visit article_path(articles(:post1))
+    page.text.wont_include 'Destroy'
+  end
+
+  scenario "author cannot delete another user's article" do
+    sign_in(:author)
+
+    # Visit article show page and click delete button
+    article = articles(:post2)
+    visit article_path(article)
+    page.text.wont_include 'Destroy'
+  end
+
+  scenario "delete an existing article as editor" do
     sign_in(:editor)
 
     # Visit article show page and click delete button

@@ -21,12 +21,6 @@ feature "Creating New Article as an author" do
     page.has_css? ".author"
     page.text.must_include users(:author).email
   end
-
-  scenario "authors can't publish" do
-    sign_in(:author)
-    visit new_article_path
-    page.wont_have_field('published')
-  end
 end
 
 feature "Visitors cannot create articles" do
@@ -41,7 +35,7 @@ feature "Visitors cannot create articles" do
   end
 end
 
-feature "Creating an article as an editor and can publish" do
+feature "Creating an article as an editor" do
   scenario "editors can create a new article" do
     sign_in(:editor)
     visit new_article_path
@@ -49,16 +43,5 @@ feature "Creating an article as an editor and can publish" do
     fill_in "Body", with: "Test publish body"
     click_on "Create Article"
     page.text.must_include "Test publish title"
-  end
-
-  scenario "editors can publish" do
-    sign_in(:editor)
-    visit new_article_path
-    page.must_have_field('Published')
-    fill_in "Title", with: "Test publish title"
-    fill_in "Body", with: "Test publish body"
-    check "Published"
-    click_on "Create Article"
-    page.text.must_include "Status: Published"
   end
 end
