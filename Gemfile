@@ -15,6 +15,7 @@ gem 'puma'
 gem 'launchy'
 gem 'devise'
 gem 'pundit'
+gem 'simplecov'
 
 group :development, :test do
   gem 'byebug'
