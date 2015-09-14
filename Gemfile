@@ -14,6 +14,7 @@ gem 'foundation-rails'
 gem 'puma'
 gem 'launchy'
 gem 'devise'
+gem 'pundit'
 
 group :development, :test do
   gem 'byebug'
