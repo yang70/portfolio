@@ -1,11 +1,11 @@
 post1:
   title: Title to the first
   body: Body for the first
-  author: ruby
+  author: author
   published: true
 
 post2:
   title: Title for the second
   body: Body for the second
-  author: ruby
+  author: edit
   published: true

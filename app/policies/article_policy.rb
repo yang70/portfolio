@@ -2,23 +2,35 @@ class ArticlePolicy < ApplicationPolicy
   attr_accessor :user, :article
 
   def initialize(user, article)
-    @user = user
+    @user = user || NullUser.new
     @article = article
   end
 
   def publish?
-    true if @user &&@user.editor?
+    user.editor?
   end
 
   def destroy?
-    true if @user && @user.editor?
+    user.editor?
   end
 
   def create?
-    true if @user && (@user.editor? || @user.author?)
+    user.editor? || user.author?
   end
 
   def update?
-    true if @user && (@user.editor? || @user.id == @article.author_id)
+    user.editor? || user == article.author
+  end
+
+  class Scope < Scope
+    def resolve
+      if user && user.editor?
+        scope.all
+      elsif user && user.author?
+        scope.where(author_id: user.id)
+      else
+        scope.where(published: true)
+      end
+    end
   end
 end

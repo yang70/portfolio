@@ -3,13 +3,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
-    @articles = Article.all
-    # @articles = Article.find_by(published: true)
-    # if current_user && current_user.editor?
-    #   @articles = Article.all
-    # elsif current_user
-    #   @articles = @articles | Article.find_by(author_id: current_user.id)
-    # end
+    @articles = policy_scope(Article)
   end
 
   def show
