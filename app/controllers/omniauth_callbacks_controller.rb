@@ -1,6 +1,6 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def all
-    # raise request.env["omniauth.auth"].to_yaml
+    logger.info caller.inspect
     user = User.from_omniauth(request.env["omniauth.auth"])
     if user.persisted?
       flash.notice = "#{user.name}, you are signed in!"
@@ -11,4 +11,5 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
   alias_method :twitter, :all
+  # alias_method :github, :all
 end
