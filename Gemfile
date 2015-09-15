@@ -16,6 +16,7 @@ gem 'launchy'
 gem 'devise'
 gem 'pundit'
 gem 'simplecov'
+gem 'coveralls', require: false
 
 group :development, :test do
   gem 'byebug'
