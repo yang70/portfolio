@@ -17,6 +17,9 @@ gem 'devise'
 gem 'pundit'
 gem 'simplecov'
 gem 'coveralls', require: false
+gem 'dotenv-rails'
+gem 'omniauth-twitter'
+gem 'omniauth-github'
 
 group :development, :test do
   gem 'byebug'

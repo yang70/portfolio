@@ -1,22 +1,28 @@
 [![Build Status](https://travis-ci.org/yang70/portfolio.svg?branch=master)](https://travis-ci.org/yang70/portfolio)
 [![Coverage Status](https://coveralls.io/repos/yang70/portfolio/badge.svg?branch=master&service=github)](https://coveralls.io/github/yang70/portfolio?branch=master)
 
-# Portfolio - Matthew G. Yang
+# Portfolio - A Ruby on Rails application
 
   <img src="https://s3-us-west-2.amazonaws.com/yangportfoliobucket/layoutpics/headshot.jpg" width="200">
 
 By [Matthew Yang](http://www.matthewgyang.com).
 
+## Special Notes
+
+This projects is still very much in progress, especially the styling!  It is being pushed out in order to get a presence on the web established.
+
 ## Description
-**Portfolio** This is a portfolio Rails application
+**Portfolio**
 
-It includes a welcome page with links to features including the blog, journal and projects.
+This Rails application includes a welcome page with general information about the author, plus links to current projects, blog, resume and contact information.
 
-The journal includes a user sign up/authentication system by incorporating the [Devise gem](https://github.com/plataformatec/devise).
+The blog incorporates a user sign up/authentication/authorization system including sign up via Twitter (OmniAuth) by incorporating the following gems:
 
+* [Devise](https://github.com/plataformatec/devise)
+* [Pundit](https://github.com/elabs/pundit)
+* [Omniauth-Twitter](https://github.com/arunagw/omniauth-twitter)
 
-
-## Specifications
+## Testing
 
 App was created without the default test suite with this command:
 
@@ -65,14 +71,6 @@ Continuous integration has been implemented with Travis-CI, including adding a s
 Test coverage is now documented with [SimpleCov](https://github.com/colszowka/simplecov)
 
 Test coverage badge on this README from [COVERALLS](https://coveralls.io/)
-
-## Special Notes
-
-Continuing to add the ability to make notes by modifying Rails scaffolding, see screenshot:
-
-![Screenshot 1](app/assets/images/articles_screenshot.png)
-
-Have added the ability to add image url's to the projects resource.
 
 ## Credit
 **Styling The basic HTML structure and CSS is from a Zurb Foundation template located [here](http://foundation.zurb.com/templates/portfolio-theme.html)
