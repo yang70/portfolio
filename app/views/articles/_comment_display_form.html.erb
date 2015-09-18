@@ -1,0 +1,19 @@
+<p><strong>Comments</strong></p>
+<p>_____________________________________________________</p>
+<% @article.comments.each do |comment| %>
+  <% if comment.content.nil? %>
+    <% next %>
+  <% else %>
+    <% if policy(comment).view? %>
+      <p><%= comment.content %></p>
+      <p><strong>From: </strong><%= comment.user_email %></p>
+      <% if comment.approved.nil? || comment.approved == false %>
+        <p><em>Comment invisible until approved by an editor</em></p>
+      <% end %>
+      <% if policy(comment).approve? && (comment.approved.nil? || comment.approved == false) %>
+        <%= link_to "Approve", edit_article_comment_path(@article, comment) %>
+      <% end %>
+      <p>_____________________________________________________</p>
+    <% end %>
+  <% end %>
+<% end %>

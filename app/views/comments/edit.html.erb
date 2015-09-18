@@ -1,0 +1,20 @@
+<h1>Editing comment for article</h1>
+
+<%= form_for [@article, @comment] do |f| %>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_field :content  %>
+  </div>
+
+  <% if policy(@comment).approve? %>
+    <div class="field">
+      <%= f.label :approved %>
+      <%= f.check_box :approved %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

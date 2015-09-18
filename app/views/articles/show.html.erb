@@ -5,7 +5,6 @@
 </h3>
 
 <p>
-  <strong>Body:</strong>
   <%= @article.body %>
 </p>
 
@@ -27,38 +26,6 @@
 <% end %>
 <%= link_to 'Back', articles_path %>
 
-<p><strong>Comments</strong></p>
-<p>_____________________________________________________</p>
-<% @article.comments.each do |comment| %>
-  <% if comment.content.nil? %>
-    <% next %>
-  <% else %>
-    <p><%= comment.content %></p>
-    <p><strong>From: </strong><%= comment.user_email %></p>
-    <p>_____________________________________________________</p>
-  <% end %>
-<% end %>
+<%= render 'comment_display_form' %>
 
-<% if policy(@article).comment? %>
-  <%= form_for(@comment) do |f| %>
-
-    <div class="field">
-      <%= f.label :content, "Enter comment below" %><br>
-      <%= f.text_field :content %>
-    </div>
-
-    <% if policy(@article).approve? %>
-      <div class="field">
-        <%= f.label :approved %>
-        <%= f.check_box :approved %>
-      </div>
-    <% end %>
-
-    <%= f.hidden_field :article_id, value: @article.id %>
-    <%= f.hidden_field :user_email, value: current_user.email %>
-
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-  <% end %>
-<% end %>
+<%= render 'comment_entry_form' %>
