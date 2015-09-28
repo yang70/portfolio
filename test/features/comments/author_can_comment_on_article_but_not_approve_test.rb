@@ -7,6 +7,6 @@ feature "author can comment on article but not approve the comment" do
     fill_in 'Enter comment below', with: "I'm commenting!"
     click_on 'Create Comment'
     page.text.must_include "Comment submitted, must be approved by an editor."
-    page.text.must_include "Pending"
+    page.text.must_include "Comment invisible until approved by an editor"
   end
 end
