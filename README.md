@@ -14,7 +14,7 @@ This projects is still very much in progress, especially the styling!  It is bei
 ## Description
 **Portfolio**
 
-This Rails application includes a welcome page with general information about the author, plus links to current projects, blog, resume and contact information.
+This Rails application includes a welcome page with general information about the author, plus links to current projects, blog with comments (and comment approval system), resume and contact information.
 
 The blog incorporates a user sign up/authentication/authorization system including sign up via Twitter (OmniAuth) by incorporating the following gems:
 
