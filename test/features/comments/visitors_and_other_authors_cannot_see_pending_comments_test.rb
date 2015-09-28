@@ -1,7 +1,6 @@
 require 'test_helper'
 
 feature "non logged in visitor and other authors cannot see pending commments" do
-
   scenario "verify comment there for editor" do
     sign_in(:editor)
     visit article_path(articles(:post4))

@@ -39,7 +39,6 @@ class CommentsController < ApplicationController
     end
   end
 
-
   private
 
   def load_commentable
