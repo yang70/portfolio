@@ -1,11 +1,9 @@
-
 <h3>
   <strong>Title:</strong>
   <%= @article.title %>
 </h3>
 
 <p>
-  <strong>Body:</strong>
   <%= @article.body %>
 </p>
 
@@ -23,6 +21,10 @@
   <%= link_to 'Edit', edit_article_path(@article) %> |
 <% end %>
 <% if policy(@article).destroy? %>
-  <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %> |
+  <%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <% end %>
 <%= link_to 'Back', articles_path %>
+
+<%= render 'comment_display_form' %>
+
+<%= render 'comment_entry_form' %>

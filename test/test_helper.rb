@@ -29,4 +29,11 @@ def sign_in(role = :editor)
   click_on "Log in"
 end
 
+def create_comment(role = :author)
+  sign_in(role)
+  visit article_path(articles(:post1))
+  fill_in "comment_content", with: "Test comment"
+  click_on "Sign Out"
+end
+
 system 'rubocop'

@@ -1,0 +1,35 @@
+<div class='container'>
+  <p><strong>Comments</strong></p>
+  <p>_____________________________________________________</p>
+  <% @article.comments.each do |comment| %>
+    <% if comment.content.nil? %>
+      <% next %>
+    <% else %>
+      <% if policy(comment).view? %>
+        <p><%= comment.content %></p>
+        <p><strong>From: </strong><%= comment.user.email %></p>
+        <% if comment.approved.nil? || comment.approved == false %>
+          <p><em>Comment invisible until approved by an editor</em></p>
+        <% end %>
+        <% if policy(comment).approve? && (comment.approved.nil? || comment.approved == false) %>
+          <%= form_for [@article, comment] do |f| %>
+
+            <div class="field">
+              <%= f.label :approved, "Check box to approve" %>
+              <%= f.check_box :approved %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit "Update" %>
+            </div>
+          <% end %>
+        <% end %>
+
+        <% if policy(comment).approve? %>
+          <%= link_to 'Delete', [@article, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+        <p>_____________________________________________________</p>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

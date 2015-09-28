@@ -22,6 +22,14 @@ class ArticlePolicy < ApplicationPolicy
     user.editor? || user == article.author
   end
 
+  def comment?
+    user.editor? || user.author?
+  end
+
+  def approve?
+    user.editor?
+  end
+
   class Scope < Scope
     def resolve
       if user && user.editor?
