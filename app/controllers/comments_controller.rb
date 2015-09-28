@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :load_commentable, only: [:create, :edit]
+  before_action :load_commentable, only: [:create, :edit, :update]
 
   def create
     @comment = @article.comments.new(comment_params)
@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
       flash[:notice] = "Comment submitted, must be approved by an editor."
     else
       flash[:alert] = "Comment field cannot be blank."
-      redirect_to :back
+      redirect_to @article
     end
   end
 
@@ -32,10 +32,10 @@ class CommentsController < ApplicationController
     authorize @comment
     if @comment.update(comment_params)
       flash[:notice] = "Comment was updated."
-      redirect_to :back
-    else
-      flash[:alert] = "Unable to update comment."
       redirect_to @article
+    else
+      flash[:alert] = "Content field cannot be blank, unable to update."
+      redirect_to edit_article_comment_path(@article, @comment)
     end
   end
 

@@ -1,20 +1,22 @@
-<% if policy(@comment).comment? %>
-  <%= form_for [@article, @comment] do |f| %>
+<div class="container">
+  <% if policy(@comment).comment? %>
+    <%= form_for [@article, @comment] do |f| %>
 
-    <div class="field">
-      <%= f.label :content, "Enter comment below" %><br>
-      <%= f.text_field :content %>
-    </div>
-
-    <% if policy(@comment).approve? %>
       <div class="field">
-        <%= f.label :approved %>
-        <%= f.check_box :approved %>
+        <%= f.label :content, "Enter comment below" %><br>
+        <%= f.text_field :content %>
+      </div>
+
+      <% if policy(@comment).approve? %>
+        <div class="field">
+          <%= f.label :approved %>
+          <%= f.check_box :approved %>
+        </div>
+      <% end %>
+
+      <div class="actions">
+        <%= f.submit %>
       </div>
     <% end %>
-
-    <div class="actions">
-      <%= f.submit %>
-    </div>
   <% end %>
-<% end %>
+</div>
