@@ -5,3 +5,9 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
+
+comment1:
+  user: author2
+  article: post4
+  content: Test comment
+  approved: false

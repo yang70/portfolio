@@ -15,3 +15,9 @@ post3:
   body: Body for the third
   author: editor
   published: false
+
+post4:
+  title: Post to check comments
+  body:  Nothing to write here
+  author: author
+  published: true
