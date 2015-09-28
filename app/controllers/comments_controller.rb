@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   def create
     @comment = @article.comments.new(comment_params)
     if @comment.save
-      @comment.user_id = current_user.id
+      @comment.user = current_user
       @comment.save
       redirect_to @article
       flash[:notice] = "Comment submitted, must be approved by an editor."
@@ -48,6 +48,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:content, :article_id, :user_email, :approved)
+    params.require(:comment).permit(:content, :approved)
   end
 end

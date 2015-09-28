@@ -7,7 +7,7 @@
     <% else %>
       <% if policy(comment).view? %>
         <p><%= comment.content %></p>
-        <p><strong>From: </strong><%= comment.user_email %></p>
+        <p><strong>From: </strong><%= comment.user.email %></p>
         <% if comment.approved.nil? || comment.approved == false %>
           <p><em>Comment invisible until approved by an editor</em></p>
         <% end %>
