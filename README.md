@@ -22,6 +22,10 @@ The blog incorporates a user sign up/authentication/authorization system includi
 * [Pundit](https://github.com/elabs/pundit)
 * [Omniauth-Twitter](https://github.com/arunagw/omniauth-twitter)
 
+## Mailers
+
+`ActionMailer` is configured to alert a blog article author if they get a new and approved comment.  Mail configured in Heroku deployment with the add on [SendGrid](https://sendgrid.com/)
+
 ## Testing
 
 App was created without the default test suite with this command:
