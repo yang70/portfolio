@@ -9,6 +9,8 @@ require "minitest/rails"
 require "minitest/rails/capybara"
 require "minitest/pride"
 require "minitest/reporters"
+require 'minitest-matchers'
+require 'email_spec'
 
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 

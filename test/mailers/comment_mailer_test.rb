@@ -1,7 +1,7 @@
 require "test_helper"
+include EmailSpec::Helpers
+include EmailSpec::Matchers
 
-class CommentMailerTest < ActionMailer::TestCase
-  def test_sanity
-    flunk "Need real tests"
-  end
+mailer "verify mailers working for comments" do
+
 end
