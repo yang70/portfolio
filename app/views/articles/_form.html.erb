@@ -20,6 +20,11 @@
     <%= f.text_area :body %>
   </div>
 
+  <div class="field">
+    <%= f.label :picture %>
+    <%= f.file_field :picture %>
+  </div>
+
   <% if policy(@article).publish? %>
     <div class="field">
       <%= f.label :published %>
