@@ -28,6 +28,7 @@ end
 group :test do
   gem 'minitest-rails-capybara'
   gem 'rubocop'
+  gem 'email_spec'
 end
 
 group :development do

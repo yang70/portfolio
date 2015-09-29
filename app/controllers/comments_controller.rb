@@ -31,6 +31,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     authorize @comment
     if @comment.update(comment_params)
+      CommentMailer.new_comment_email(@article).deliver_later
       flash[:notice] = "Comment was updated."
       redirect_to @article
     else
