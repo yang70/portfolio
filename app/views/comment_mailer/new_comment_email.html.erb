@@ -6,11 +6,12 @@
   <body>
     <h1>Hello, <%= @article.author.email %>!</h1>
     <p>
-      Your article titled <%= @article.title %> has a new comment!<br>
+      Your article titled "<%= @article.title %>" at <a href="http://matthewgyang.com">matthewgyang.com</a> has a new comment!<br>
     </p>
     <p>
-
+      <%= link_to 'View article', article_url(@article) %>
     </p>
     <p>Have a great day!</p>
+    <p>- Matt</p>
   </body>
 </html>

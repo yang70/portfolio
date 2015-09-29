@@ -7,6 +7,6 @@ feature "verify mailers working for comments" do
     first("input[type='checkbox']").set(true)
     click_on "Update"
     ActionMailer::Base.deliveries.last.to.first.must_equal "author@example.com"
-    ActionMailer::Base.deliveries.last.parts.first.body.raw_source.must_include "Your article titled Post to check comments has a new comment!"
+    ActionMailer::Base.deliveries.last.parts.first.body.raw_source.must_include 'Your article titled "Post to check comments" at matthewgyang.com has a new comment!'
   end
 end
