@@ -14,6 +14,4 @@ else
 end
 
   config.fog_directory  = ENV['S3_BUCKET']                     # required
-  config.fog_host       = 'https://assets.example.com'            # optional, defaults to nil
-  config.s3_access_policy = :public_read
 end
