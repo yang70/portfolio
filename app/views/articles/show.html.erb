@@ -3,6 +3,8 @@
   <%= @article.title %>
 </h3>
 
+<%= image_tag @article.picture.url if @article.picture.present? %>
+
 <p>
   <%= @article.body %>
 </p>

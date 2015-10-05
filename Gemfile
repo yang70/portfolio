@@ -20,6 +20,9 @@ gem 'coveralls', require: false
 gem 'dotenv-rails'
 gem 'omniauth-twitter'
 gem 'omniauth-github'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
 
 group :development, :test do
   gem 'byebug'

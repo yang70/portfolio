@@ -26,6 +26,10 @@ The blog incorporates a user sign up/authentication/authorization system includi
 
 `ActionMailer` is configured to alert a blog article author if they get a new and approved comment.  Mail configured in Heroku deployment with the add on [SendGrid](https://sendgrid.com/)
 
+## Picture Upload
+
+Picture uploading to articles was enabled with the [CarrierWave](https://github.com/carrierwaveuploader/carrierwave) gem.  It is configured to upload to AWS S3.
+
 ## Testing
 
 App was created without the default test suite with this command:
