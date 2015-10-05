@@ -13,9 +13,16 @@
       <!-- nav bar right menu -->
       <ul class="right">
         <li class="active"><%= link_to "Home", root_path %></li>
-        <li class=""><%= link_to "About", '#' %></li>
-        <li class=""><%= link_to "Resume", '#' %></li>
-        <li class=""><%= link_to "Contact", '#' %></li>
+        <li class=""><%= link_to "About", '/#about' %></li>
+        <li class="has-dropdown">
+          <a>Resume</a>
+            <ul class="dropdown">
+              <li><a href="https://s3.amazonaws.com/matthewgyang/resume/Matthew+G+Yang+-+Resume.pdf" target="_blank">PDF</a></li>
+              <li><a href="https://s3.amazonaws.com/matthewgyang/resume/Matthew+G+Yang+-+Resume.doc" target="_blank">Word Doc</a></li>
+              <li><a href="https://s3.amazonaws.com/matthewgyang/resume/Matthew+G+Yang+-+Resume.pages.zip" target="_blank">Pages</a></li>
+            </ul>
+        </li>
+        <li class=""><%= link_to "Contact", '/#contact' %></li>
         <!-- <li class=""><%= link_to "Projects", projects_path %></li> -->
         <li class=""><%= link_to "Blog", articles_path %></li>
         <% if current_user.present? %>
