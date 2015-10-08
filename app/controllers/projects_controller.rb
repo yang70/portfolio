@@ -17,8 +17,10 @@ class ProjectsController < ApplicationController
         format.js {flash.now[:notice] = "Project has been created."}
       end
     else
-      flash.now[:error] = "Project could not be saved."
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.js { render :new}
+      end
     end
   end
 
@@ -27,9 +29,15 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update_attributes(project_params)
-      redirect_to @project, notice: 'Success! Project was updated.'
+      respond_to do |format|
+        format.html { redirect_to @project, notice: 'Success! Project was updated.' }
+        format.js {flash.now[:notice] = "Success! Project was updated."}
+      end
     else
-      render :edit
+      respond_to do |format|
+        format.html { render :edit }
+        format.js { render :edit }
+      end
     end
   end
 

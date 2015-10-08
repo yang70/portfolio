@@ -1,9 +1,9 @@
-<li class="project" id="<%= dom_id(project) %>">
+<li class="project large-3 columns" id="<%= dom_id(project) %>">
   <%= link_to image_tag(project.image_url), project %>
   <h3><%= project.name %></h3>
   <div class="nav">
     <%= link_to 'Show', project %> |
-    <%= link_to 'Edit', edit_project_path(project) %> |
+    <%= link_to 'Edit', edit_project_path(project), remote: true %> |
     <%= link_to 'Destroy', project, method: :delete,
                                     data: { confirm: 'Are you sure?' }, remote: true %>
   </div>

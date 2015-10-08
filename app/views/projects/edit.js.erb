@@ -1,0 +1,5 @@
+$('#project_<%= @project.id %>').remove();
+$('#edit_project_<%= @project.id %>').remove();
+$('#new_link').hide();
+$('#new_div').append("<%= j render('form') %>");
+$('#edit_project_<%= @project.id %>').prepend('<h3>Editing Project #<%= @project.id %>');

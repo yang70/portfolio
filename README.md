@@ -30,6 +30,9 @@ The blog incorporates a user sign up/authentication/authorization system includi
 
 Picture uploading to articles was enabled with the [CarrierWave](https://github.com/carrierwaveuploader/carrierwave) gem.  It is configured to upload to AWS S3.
 
+## Single Page Application
+The projects sections has been created as a single page application (SPA) by incorporating AJAX calls and jQuery using Rails convention.  CRUD action links updated by adding `remote: true` and creating the correct response logic in the controller to respond to html or javascript accordingly.  Then specific javascript 'views' were created, which are just jQuery statements.
+
 ## Testing
 
 App was created without the default test suite with this command:
