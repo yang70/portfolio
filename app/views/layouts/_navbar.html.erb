@@ -23,7 +23,7 @@
             </ul>
         </li>
         <li class=""><%= link_to "Contact", '/#contact' %></li>
-        <!-- <li class=""><%= link_to "Projects", projects_path %></li> -->
+        <li class=""><%= link_to "Projects", projects_path %></li>
         <li class=""><%= link_to "Blog", articles_path %></li>
         <% if current_user.present? %>
           <li class=""><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>

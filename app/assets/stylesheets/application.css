@@ -34,3 +34,39 @@ body {
 #checkbox1 {
   margin-left: 20px;
 }
+
+.field {
+  width: 500px;
+  margin: 20px;
+}
+
+.actions {
+  margin: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+.column + .column:last-child,
+.columns + .column:last-child, .column +
+.columns:last-child,
+.columns +
+.columns:last-child {
+   float: left;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}

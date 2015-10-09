@@ -12,11 +12,15 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     if @project.save
-      flash[:notice] = "Project has been created."
-      redirect_to @project
+      respond_to do |format|
+        format.html { redirect_to @project, flash[:notice] = "Project has been created." }
+        format.js {flash.now[:notice] = "Project has been created."}
+      end
     else
-      flash.now[:error] = "Project could not be saved."
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.js { render :new}
+      end
     end
   end
 
@@ -25,9 +29,15 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update_attributes(project_params)
-      redirect_to @project, notice: 'Success! Project was updated.'
+      respond_to do |format|
+        format.html { redirect_to @project, notice: 'Success! Project was updated.' }
+        format.js {flash.now[:notice] = "Success! Project was updated."}
+      end
     else
-      render :edit
+      respond_to do |format|
+        format.html { render :edit }
+        format.js { render :edit }
+      end
     end
   end
 
@@ -35,6 +45,7 @@ class ProjectsController < ApplicationController
     @project.destroy
     respond_to do |format|
       format.html { redirect_to projects_url, notice: 'Success! Project was destroyed.' }
+      format.js
     end
   end
 
@@ -48,6 +59,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :technologies_used, :image_url)
+    params.require(:project).permit(:name, :technologies_used, :image_url, :source_url)
   end
 end
