@@ -1,30 +1,32 @@
-<h3>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</h3>
+<div class="container">
+  <h3>
+    <strong>Title:</strong>
+    <%= @article.title %>
+  </h3>
 
-<%= image_tag @article.picture.url if @article.picture.present? %>
+  <%= image_tag @article.picture.url if @article.picture.present? %>
 
-<%= markdown(@article.body) %>
+  <%= markdown(@article.body) %>
 
-<p class="author">
-  <b>By:</b>
-  <%= @article.author.email %>
-</p>
+  <p class="author">
+    <b>By:</b>
+    <%= @article.author.email %>
+  </p>
 
-<p id="status">
-  <b>Status:</b>
-  <%= @article.published? ? "Published" : "Unpublished" %>
-</p>
+  <p id="status">
+    <b>Status:</b>
+    <%= @article.published? ? "Published" : "Unpublished" %>
+  </p>
 
-<% if policy(@article).update? %>
-  <%= link_to 'Edit', edit_article_path(@article) %> |
-<% end %>
-<% if policy(@article).destroy? %>
-  <%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<% end %>
-<%= link_to 'Back', articles_path %>
+  <% if policy(@article).update? %>
+    <%= link_to 'Edit', edit_article_path(@article) %> |
+  <% end %>
+  <% if policy(@article).destroy? %>
+    <%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?' } %> |
+  <% end %>
+  <%= link_to 'Back', articles_path %>
 
-<%= render 'comment_display_form' %>
+  <%= render 'comment_display_form' %>
 
-<%= render 'comment_entry_form' %>
+  <%= render 'comment_entry_form' %>
+</div>
