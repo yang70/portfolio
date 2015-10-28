@@ -23,6 +23,8 @@ gem 'omniauth-github'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
+gem 'redcarpet'
+gem 'coderay'
 
 group :development, :test do
   gem 'byebug'
