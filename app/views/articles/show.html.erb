@@ -5,9 +5,7 @@
 
 <%= image_tag @article.picture.url if @article.picture.present? %>
 
-<p>
-  <%= @article.body %>
-</p>
+<%= markdown(@article.body) %>
 
 <p class="author">
   <b>By:</b>
