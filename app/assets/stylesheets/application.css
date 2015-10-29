@@ -70,3 +70,9 @@ ul {
   background-color: red;
   display: table;
 }
+
+pre {
+  background: #002A35!important;
+  color: #93A1A1!important;
+}
+
