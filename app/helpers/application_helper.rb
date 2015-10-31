@@ -1,12 +1,8 @@
 module ApplicationHelper
-  # translate Rails flash levels to appropriate Zurb Foundation css classes
-  def flash_class(level)
-    level == :notice ? "info" : level.to_s
-  end
 
   class CodeRayify < Redcarpet::Render::HTML
     def block_code(code, language)
-      CodeRay.scan(code, language).div
+      CodeRay.scan(code, language).div(:line_numbers => :table)
     end
   end
 

@@ -11,9 +11,40 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap
 //= require jquery_ujs
-//= require foundation
 //= require turbolinks
 //= require_tree .
+$(document).on("ready page:change", function() {
 
-$(function(){ $(document).foundation(); });
+  $(".thing_container").on('mouseenter', function(){
+    $(this).addClass('hovered');
+  });
+
+  $(".thing_container").on('mouseleave', function(){
+    $(this).removeClass('hovered');
+  });
+
+  $('.show_project').
+
+  var ismobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+
+  if(!ismobile){
+    $('.navbar .dropdown').hover(function() {
+      $(this).find('.dropdown-menu').first().stop(true, true).slideDown(150);
+    }, function() {
+      $(this).find('.dropdown-menu').first().stop(true, true).slideUp(105)
+    });
+
+
+    var jumboHeight = $('.jumbotron').outerHeight();
+    function parallax(){
+        var scrolled = $(window).scrollTop();
+        $('.bg').css('height', (jumboHeight-scrolled) + 'px');
+    }
+
+    $(window).scroll(function(e){
+        parallax();
+    });
+  }
+});
