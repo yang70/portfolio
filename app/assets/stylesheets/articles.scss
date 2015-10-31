@@ -2,7 +2,52 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container {
-  max-width: 500px;
-  margin: 10 auto 10 auto;
+.thing_pic {
+  height: 173px;
+  width: 200px;
+}
+
+.thing_container {
+  text-align: center;
+  margin-top: 30px;
+  -moz-transition: top 0.2s;
+  -o-transition: top 0.2s;
+  -webkit-transition: top 0.2s;
+  transition: top 0.2s;
+}
+
+.hovered {
+  top: -10px;
+}
+
+.thing_container h3, .thing_container h4 {
+  margin-top: 5px;
+  color: black;
+}
+
+.thing_container a {
+  text-decoration: none;
+}
+
+#new_article_link {
+  text-align: center;
+}
+
+.show_pic {
+  height: 350px;
+  width: 350px;
+  margin: 0 auto;
+  display: block;
+}
+
+.show_thing {
+  display: block;
+}
+
+.show_thing h3 {
+  text-align: center;
+}
+
+.show_thing div {
+  text-align: center;
 }

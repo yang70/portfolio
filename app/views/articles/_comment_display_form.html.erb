@@ -1,6 +1,28 @@
-<div class='container'>
+<div class="col-md-6">
+  <% if policy(@comment).comment? %>
+    <%= form_for [@article, @comment] do |f| %>
+
+      <div class="field">
+        <%= f.label :content, "Enter comment below" %><br>
+        <%= f.text_field :content %>
+      </div>
+
+      <% if policy(@comment).approve? %>
+        <div class="field">
+          <%= f.label :approved %>
+          <%= f.check_box :approved %>
+        </div>
+      <% end %>
+
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<div class='col-md-6'>
   <p><strong>Comments</strong></p>
-  <p>_____________________________________________________</p>
+  <p>_______________________________</p>
   <% @article.comments.each do |comment| %>
     <% if comment.content.nil? %>
       <% next %>
@@ -28,7 +50,7 @@
         <% if policy(comment).approve? %>
           <%= link_to 'Delete', [@article, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
-        <p>_____________________________________________________</p>
+          <p>_______________________________</p>
       <% end %>
     <% end %>
   <% end %>

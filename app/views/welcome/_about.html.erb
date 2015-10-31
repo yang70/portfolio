@@ -1,9 +1,10 @@
-<div class="row about" NAME="about">
-  <div class="medium-6 large-8 columns">
-    <h4>About</h4>
-    <p>Welcome to my site!  I am a web developer currently enjoying the Ruby on Rails framework and am residing with my family in the greater Seattle area.  I am currently a student at <a href="http://www.codefellows.org">Code Fellows</a>, an intensive web dev/code school specializing in graduating hire-ready devolopers.  After ten years in my previous field I am looking for a career change and am puting in the time and effort to make that dream a reality for my family and myself.  Please feel free to <%= link_to "contact", '#' %> me for any reason!  Thank you!</p>
+<div class="container">
+  <h3>About</h3>
+  <a name="about"></a>
+  <div class="col-md-8">
+    <p>Welcome!  My name is Matt and I am a web developer currently enjoying the Ruby on Rails framework and expanding my knowledge base on a daily basis.  After ten years in my previous field I am looking for a career change and am puting in the time and effort to make that dream a reality for my family and for myself.  Please feel free to <%= link_to "contact", '#contact' %> me for any reason!  Thank you!</p>
   </div>
-  <div class="medium-6 large-4 columns">
-    <%= image_tag 'headshot.jpg' %>
+  <div class="col-md-4">
+    <%= image_tag 'headshot.jpg', id: "rubes" %>
   </div>
 </div>

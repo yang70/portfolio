@@ -2,14 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <meta name="google-site-verification" content="0e2IkAkKgScT_OMt4gp4IJ8KLLP4CO16MvN5Z5vlC-Y" />
 
     <title><%= content_for?(:title) ? yield(:title) : "Matthew G Yang" %></title>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
@@ -18,17 +17,9 @@
 
     <%= render 'layouts/navbar' %>
 
-    <div class="" id="content">
+    <%= render 'layouts/flash' %>
 
-      <% flash.each do |key, value| %>
-        <div class="alert-box round <%= flash_class(key) %>">
-          <%= value %>
-        </div>
-      <% end %>
-
-      <%= yield %>
-
-    </div>
+    <%= yield %>
 
     <%= render 'layouts/footer' %>
 

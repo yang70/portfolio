@@ -1,10 +1,11 @@
-<h2>My Portfolio</h2>
-<div id="new_div">
-  <h3 id="new_link"><%= link_to 'New project', new_project_path, remote: true %></h3>
+<div id="new_project_link" class="col-md-12">
+  <h2>Portfolio</h2>
+  <% if policy(@projects).create? %>
+    <h3 id="new_link"><%= link_to 'New project', new_project_path, remote: true %></h3>
+  <% end %>
 </div>
-<ul class="large-12 columns" id="projects_list">
-  <% @projects.each do |project| %>
-    <%= render project %>
-  <% end -%>
-</ul>
+
+<% @projects.each do |project| %>
+  <%= render project %>
+<% end %>
 <br />

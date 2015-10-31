@@ -1,0 +1,128 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bg {
+  background: url('https://s3.amazonaws.com/matthewgyang/images/hero_name2.png') no-repeat center center;
+  position: fixed;
+  width: 100%;
+  height: 350px; /*same height as jumbotron */
+  top:0;
+  left:0;
+  z-index: -1;
+}
+
+.jumbotron {
+  margin-bottom: 0px;
+  height: 350px;
+  color: white;
+  text-shadow: black 0.3em 0.3em 0.3em;
+  background:transparent;
+}
+
+#rubes {
+  width: 200px;
+  border-radius: 100%;
+  margin: 0 auto;
+  display: block;
+  margin-top: -10px;
+}
+
+.links {
+  width: 85px;
+}
+
+@media screen and (max-device-width: 860px){
+
+  .jumbotron {
+    background: url('https://s3.amazonaws.com/matthewgyang/images/hero_name_short.png') 30% center no-repeat;
+    width: 100%;
+    padding: 0;
+    height: 150px;
+  }
+
+  .bg {
+    display: none;
+  }
+}
+
+/*=========================
+  Icons
+ ================= */
+
+/* footer social icons */
+ul.social-network {
+  list-style: none;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+}
+ul.social-network li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+
+/* footer social icons */
+.social-network a.icoEnvelope:hover {
+  background-color: #F56505;
+}
+.social-network a.icoGithub:hover {
+  background-color: black;
+}
+.social-network a.icoLinkedin:hover {
+  background-color:#007bb7;
+}
+.social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
+.social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
+  color:#fff;
+}
+a.socialIcon:hover, .socialHoverClass {
+  color:#44BCDD;
+}
+
+.social-circle li a {
+  display:inline-block;
+  position:relative;
+  margin:0 auto 0 auto;
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+  border-radius:50%;
+  text-align:center;
+  width: 100px;
+  height: 100px;
+  font-size:40px;
+}
+.social-circle li i {
+  margin:0;
+  line-height:100px;
+  text-align: center;
+}
+
+.social-circle li a:hover i, .triggeredHover {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms--transform: rotate(360deg);
+  transform: rotate(360deg);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.social-circle i {
+  color: #fff;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+.grey {
+ background-color: #262626;
+}
+
+footer div {
+  text-align: center;
+}

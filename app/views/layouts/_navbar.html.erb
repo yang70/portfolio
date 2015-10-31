@@ -1,36 +1,48 @@
-<div class="fixed">
-  <!-- nav bar left -->
-  <nav class="top-bar" data-topbar role="navigation">
-    <ul class="title-area">
-      <li class="name">
-        <h1><%= link_to "Matthew G Yang", root_path %></h1></h1>
-      </li>
-      <!-- menu button on narrow browswer -->
-      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-    </ul>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="<%= root_path %>">Matthew G. Yang</a>
+    </div>
 
-    <section class="top-bar-section">
-      <!-- nav bar right menu -->
-      <ul class="right">
-        <li class="active"><%= link_to "Home", root_path %></li>
-        <li class=""><%= link_to "About", '/#about' %></li>
-        <li class="has-dropdown">
-          <a>Resume</a>
-            <ul class="dropdown">
-              <li><a href="https://s3.amazonaws.com/matthewgyang/resume/Matthew+G.Yang+-+Resume.pdf" target="_blank">PDF</a></li>
-              <li><a href="https://s3.amazonaws.com/matthewgyang/resume/Matthew+G.Yang+-+Resume.docx" target="_blank">Word Doc</a></li>
-            </ul>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Contact<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a target="_blank" href="mailto:matt@matthewgyang.com">Email: matt@matthewgyang.com</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a target="_blank" href="https://www.linkedin.com/in/matthewgyang">LinkedIn</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a target="_blank" href="https://github.com/yang70">GitHub</a></li>
+          </ul>
         </li>
-        <li class=""><%= link_to "Contact", '/#contact' %></li>
-        <li class=""><%= link_to "Projects", projects_path %></li>
-        <li class=""><%= link_to "Blog", articles_path %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Resume<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a target="_blank" href="https://s3.amazonaws.com/matthewgyang/resume/Matthew+G.Yang+-+Resume.pdf">PDF</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a target="_blank" href="https://s3.amazonaws.com/matthewgyang/resume/Matthew+G.Yang+-+Resume.docx">Word DOC</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="<%= articles_path %>">Blog</a></li>
+        <li><a href="<%= projects_path %>">Projects</a></li>
         <% if current_user.present? %>
-          <li class=""><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to("Sign Out", destroy_user_session_path, method: :delete) %></li>
         <% else %>
-          <li class=""><%= link_to "Sign Up", new_user_registration_path %></li>
-          <li class=""><%= link_to "Sign In", new_user_session_path %></li>
+          <li><a href="<%= new_user_registration_path %>">Sign Up</a></li>
+          <li><a href="<%= new_user_session_path %>">Sign In</a></li>
         <% end %>
       </ul>
-    </section>
-  </nav>
-</div>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
