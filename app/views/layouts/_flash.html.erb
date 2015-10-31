@@ -1,5 +1,5 @@
 <% flash.each do |key, value| %>
-  <div>
-    <%= value %>
+  <div class="<%= key %>">
+    <p><strong><%= value %></strong></p>
   </div>
 <% end %>
