@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
     if @project.save
       respond_to do |format|
         format.html { redirect_to @project, flash[:notice] = "Project has been created." }
-        format.js {flash.now[:notice] = "Project has been created."}
+        format.js
       end
     else
       respond_to do |format|
@@ -31,7 +31,7 @@ class ProjectsController < ApplicationController
     if @project.update_attributes(project_params)
       respond_to do |format|
         format.html { redirect_to @project, notice: 'Success! Project was updated.' }
-        format.js {flash.now[:notice] = "Success! Project was updated."}
+        format.js
       end
     else
       respond_to do |format|

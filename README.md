@@ -6,7 +6,7 @@
 By [Matthew Yang](http://www.matthewgyang.com).
 
 ## Description
-This repository is an ongoing project that was created for a couple reasons:
+This repository is an ongoing project that was created for a couple of reasons:
 
 1. To establish a personal website and presence on the web.
 2. As a 'playground' to test out different technologies and methods.
@@ -22,6 +22,16 @@ Policies and scope are configured using [Pundit](https://github.com/elabs/pundit
 
 New user's have the option of registering using their Twitter account which was implemented using [Omniauth-Twitter](https://github.com/arunagw/omniauth-twitter).
 
+## Blog
+The blog is pretty standard, however I wanted to be able to use Markdown for styling and for inserting code blocks.  I followed [this](http://allfuzzy.tumblr.com/post/27314404412/markdown-and-code-syntax-highlighting-in-ruby-on) blog post which institutes [Redcarpet](https://github.com/vmg/redcarpet) and [CodeRay](https://github.com/rubychan/coderay).
+
+One aspect I have not been able to implement is horizontal scroll for wide code blocks.
+
+## Projects
+As I mentioned before, the projects section uses remote JavaScript for it's CRUD actions and is able to accomplish this without a page reload.
+
+One feature I'm looking to institute is for the `show` action to automatically pull in the projects README markdown file using GitHubs API and display it to the page.
+
 ## Mailers
 
 `ActionMailer` is configured to alert the editor of various events with the site, including new user registration and comments.  Email configured in Heroku deployment with the add on [SendGrid](https://sendgrid.com/)
@@ -35,7 +45,28 @@ Picture uploading to articles was enabled with the [CarrierWave](https://github.
 Future plans include allowing users to crop an image after upload using something like [Carrierwave Crop](https://github.com/kirtithorat/carrierwave-crop/), or I might switch to [Paperclip](https://github.com/thoughtbot/paperclip) and [Papercrop](https://github.com/rsantamaria/papercrop).
 
 ## Remote JavaScript (RJS)
-The projects sections has been created as a single page application (SPA) by incorporating AJAX calls and jQuery using Rails convention.  CRUD action links updated by adding `remote: true` and creating the correct response logic in the controller to respond to html or javascript accordingly.  Then specific javascript 'views' were created, which are just jQuery statements.
+The projects sections has been created to allow quick editing by incorporating AJAX calls and jQuery using Rails [RJS](http://edgeguides.rubyonrails.org/working_with_javascript_in_rails.html).  
+
+CRUD action links updated by adding `remote: true` and creating the correct response logic in the controller to respond to html or javascript accordingly.  Then specific javascript 'views' were created, which are just jQuery statements that when execute, preform the desired actions including updating the page structure.
+
+Here's an example of a controller action that can respond to RJS:
+
+```ruby
+def create
+  @project = Project.new(project_params)
+  if @project.save
+    respond_to do |format|
+      format.html { redirect_to @project, flash[:notice] = "Project has been created." }
+      format.js 
+    end
+  else
+    respond_to do |format|
+      format.html { render :new }
+      format.js { render :new}
+    end
+  end
+end
+```
 
 ## Styling
 Styling is my self admitted "weak spot", and I'm working hard to make it a strength!  I started this site by using the [Zurb Foundation](http://foundation.zurb.com/) framework, but have recently swapped it out for [Bootstrap](http://getbootstrap.com/) which I personally find more intuitive.  Additionally there seem to be more resources available for questions/answers.
