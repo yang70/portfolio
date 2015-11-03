@@ -17,7 +17,7 @@
   height: 350px;
   color: white;
   text-shadow: black 0.3em 0.3em 0.3em;
-  background:transparent;
+  background: transparent;
 }
 
 #rubes {
@@ -26,6 +26,10 @@
   margin: 0 auto;
   display: block;
   margin-top: -10px;
+}
+
+#about div p {
+  font-size: 18px;
 }
 
 .links {

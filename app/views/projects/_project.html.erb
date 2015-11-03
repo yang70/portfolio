@@ -6,5 +6,10 @@
       <img class="thing_pic" src="https://s3.amazonaws.com/matthewgyang/images/headshot_med.png" alt="headshot">
     <% end %>
     <h3><%= project.name %></h3>
+    <% if policy(project).create? %>
+      <%= link_to 'Edit', edit_project_path(project), remote: true %> |
+      <%= link_to 'Destroy', project, method: :delete,
+                                    data: { confirm: 'Are you sure?' }, remote: true %>
+    <% end %>
   </a>
 </div>

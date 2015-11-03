@@ -14,7 +14,6 @@ gem 'puma'
 gem 'launchy'
 gem 'devise'
 gem 'pundit'
-gem 'simplecov'
 gem 'coveralls', require: false
 gem 'dotenv-rails'
 gem 'omniauth-twitter'

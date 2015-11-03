@@ -448,7 +448,6 @@ DEPENDENCIES
   rubocop
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
-  simplecov
   spring
   sqlite3
   turbolinks
