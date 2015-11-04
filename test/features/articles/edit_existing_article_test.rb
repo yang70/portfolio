@@ -56,7 +56,7 @@ feature "Visitors will not see edit links, cannot visit edit path" do
   scenario "visitors cannot see edit links on index or show" do
     visit articles_path
     page.text.wont_include "Edit"
-    first(:link, "View").click
+    click_on "Title to the first"
     page.text.wont_include "Edit"
   end
 
