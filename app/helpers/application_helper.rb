@@ -1,3 +1,6 @@
+require 'net/http'
+require 'json'
+
 module ApplicationHelper
 
   class CodeRayify < Redcarpet::Render::HTML
@@ -17,5 +20,19 @@ module ApplicationHelper
     }
     markdown_to_html = Redcarpet::Markdown.new(coderayified, options)
     markdown_to_html.render(text).html_safe
+  end
+
+  def get_readme(repo_name)
+
+    uri = URI.parse('https://api.github.com/repos/yang70/' + repo_name + '/readme')
+
+    https = Net::HTTP.new(uri.hostname, uri.port)
+    https.use_ssl = true
+
+    req = Net::HTTP::Get.new(uri.path, initheader = {'Accept' => 'application/vnd.github.v3.raw'})
+
+    res = https.request(req)
+
+    res.body
   end
 end
