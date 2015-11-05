@@ -27,10 +27,28 @@ The blog is pretty standard, however I wanted to be able to use Markdown for sty
 
 One aspect I have not been able to implement is horizontal scroll for wide code blocks.
 
-## Projects
-As I mentioned before, the projects section uses remote JavaScript for it's CRUD actions and is able to accomplish this without a page reload.
+## Portfolio
+As I mentioned before, the portfolio section uses remote JavaScript for it's CRUD actions and is able to accomplish this without a page reload.
 
-One feature I'm looking to institute is for the `show` action to automatically pull in the projects README markdown file using GitHubs API and display it to the page.
+In the show method for projects, I pull in the readme directly from GitHub via the [GitHub API](https://developer.github.com/v3/) and render the markdown like I do in the blog section.
+
+I wrote a helper method to grab the raw markdown:
+
+```ruby
+def get_readme(repo_name)
+
+  uri = URI.parse('https://api.github.com/repos/yang70/' + repo_name + '/readme')
+
+  https = Net::HTTP.new(uri.hostname, uri.port)
+  https.use_ssl = true
+
+  req = Net::HTTP::Get.new(uri.path, initheader = {'Accept' => 'application/vnd.github.v3.raw'})
+
+  res = https.request(req)
+
+  res.body
+end
+```
 
 ## Mailers
 
@@ -45,7 +63,7 @@ Picture uploading to articles was enabled with the [CarrierWave](https://github.
 Future plans include allowing users to crop an image after upload using something like [Carrierwave Crop](https://github.com/kirtithorat/carrierwave-crop/), or I might switch to [Paperclip](https://github.com/thoughtbot/paperclip) and [Papercrop](https://github.com/rsantamaria/papercrop).
 
 ## Remote JavaScript (RJS)
-The projects sections has been created to allow quick editing by incorporating AJAX calls and jQuery using Rails [RJS](http://edgeguides.rubyonrails.org/working_with_javascript_in_rails.html).  
+The projects sections has been created to allow quick editing by incorporating AJAX calls and jQuery using Rails [RJS](http://edgeguides.rubyonrails.org/working_with_javascript_in_rails.html).
 
 CRUD action links updated by adding `remote: true` and creating the correct response logic in the controller to respond to html or javascript accordingly.  Then specific javascript 'views' were created, which are just jQuery statements that when execute, preform the desired actions including updating the page structure.
 
@@ -57,7 +75,7 @@ def create
   if @project.save
     respond_to do |format|
       format.html { redirect_to @project, flash[:notice] = "Project has been created." }
-      format.js 
+      format.js
     end
   else
     respond_to do |format|
