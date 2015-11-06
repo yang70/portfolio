@@ -23,6 +23,7 @@ gem 'mini_magick'
 gem 'fog'
 gem 'redcarpet'
 gem 'coderay'
+gem 'activeadmin', github: 'activeadmin'
 
 group :development, :test do
   gem 'byebug'
