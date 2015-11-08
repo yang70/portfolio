@@ -50,11 +50,33 @@ def get_readme(repo_name)
 end
 ```
 
-## Mailers
+## Mailers / Sidekiq / Redis
 
 `ActionMailer` is configured to alert the editor of various events with the site, including new user registration and comments.  Email configured in Heroku deployment with the add on [SendGrid](https://sendgrid.com/)
 
-Future plans include moving this action to a background job.
+The new user registration welcome email to the user is handled through a background job using [Sidekiq](https://github.com/mperham/sidekiq) and [Redis](http://redis.io/).
+
+I created an `app/workers/sign_up_worker.rb` with the following code:
+
+```ruby
+class SignUpWorker
+  include Sidekiq::Worker
+
+  def perform(userid)
+    user = User.find(userid)
+    WelcomeMailer.new_welcome_email(user).deliver_later
+  end
+end
+```
+
+Then in `app/controllers/sessions/registrations_controller.rb` I add a line after deferring to `super` for the rest of the action:
+
+```ruby
+def create
+  super
+  SignUpWorker.perform_async(@user.id) unless @user.invalid?
+end
+```
 
 ## Picture Upload
 
