@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
   end
 
-  devise_for :users, controllers: { sessions: "sessions/sessions", omniauth_callbacks: "omniauth_callbacks"}
+  devise_for :users, controllers: { sessions: "sessions/sessions", omniauth_callbacks: "omniauth_callbacks",
+    registrations: "sessions/registrations"}
   resources :projects
   resources :articles do
     resources :comments
