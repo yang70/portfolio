@@ -8,9 +8,10 @@ class Sessions::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+    SignUpWorker.perform_async(@user.id) unless @user.invalid?
+  end
 
   # GET /resource/edit
   # def edit
