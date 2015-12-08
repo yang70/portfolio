@@ -8,6 +8,7 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Matthew G Yang" %></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Arimo|Montserrat' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -20,8 +21,6 @@
     <%= render 'layouts/flash' %>
 
     <%= yield %>
-
-    <%= render 'layouts/footer' %>
 
   </body>
 </html>

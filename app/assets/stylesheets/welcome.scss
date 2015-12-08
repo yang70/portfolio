@@ -32,10 +32,6 @@
   font-size: 18px;
 }
 
-#dark-bg {
-  // background-color: #333333;
-}
-
 .section-header {
   color: inherit;
 }
@@ -58,6 +54,38 @@
   }
 }
 
+#contact-container {
+  background-color: #36535A;
+  width: 100%;
+  padding-bottom: 30px;
+  ul {
+    margin-bottom: 50px;
+  }
+  h3 {
+    color: white;
+  }
+  p {
+    color: #63a8b7;
+    text-align: center;
+  }
+}
+
+#portfolio-container {
+  background-color: #FFFFFF;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+#recent-blog {
+  width: 100%;
+  background-color: #b2b2b2;
+  padding-bottom: 10px;
+}
+
+#about {
+  width: 100%;
+  padding-bottom: 10px;
+}
 /*=========================
   Icons
  ================= */
