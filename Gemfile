@@ -26,6 +26,7 @@ gem 'coderay'
 gem 'administrate'
 gem 'rack-timeout'
 gem 'sidekiq'
+gem 'pry-rails'
 
 group :development, :test do
   gem 'byebug'
@@ -41,7 +42,6 @@ group :development do
   gem 'spring'
   gem 'web-console', '~> 2.0'
   gem 'sqlite3'
-  gem 'pry-rails'
   gem 'brakeman'
 end
 
