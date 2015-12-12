@@ -1,10 +1,19 @@
-<div class="col-md-4 thing_container" id="<%= dom_id(article) %>">
-  <a href="/articles/<%= article.id %>">
-  <% if article.picture.present? %>
-    <%= image_tag article.picture.url, class: "thing_pic" %>
-  <% else %>
-    <img class="thing_pic" src="https://s3.amazonaws.com/matthewgyang/images/headshot_square.png" alt="headshot">
-  <% end %>
-  <h3><%= article.title %></h3>
-  </a>
+<div class="col-md-4" id="<%= dom_id(article) %>">
+  <div class="thing_container">
+      <a href="/articles/<%= article.id %>">
+        <% if article.picture.present? %>
+          <%= image_tag article.picture.url, class: "thing_pic" %>
+        <% else %>
+          <img class="thing_pic" src="https://s3.amazonaws.com/matthewgyang/images/headshot_square.png" alt="headshot">
+        <% end %>
+        <div class='description'>
+          <p class='description-content'><%= article.title %></p>
+        </div>
+        <div class='hover-description'>
+          <p class='hover-title'><strong><%= article.title %></strong></p>
+          <hr />
+          <p><%= article.description %></p>
+        </div>
+    </a>
+  </div>
 </div>
