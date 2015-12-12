@@ -5,12 +5,58 @@
 .thing_pic {
   height: 173px;
   width: 200px;
-  border-radius: 50%;
+  cursor: default;
 }
+
+// .thing_pic:hover {
+//   opacity: .5;
+// }
 
 .project_pic {
   height: 173px;
   width: 200px;
+  cursor: default;
+  display: block;
+}
+
+// .project_pic:hover {
+//   opacity: .5;
+// }
+
+.thing_container:hover img {
+  opacity: .5;
+}
+
+.thing_container:hover .description {
+  opacity: 0;
+}
+
+.thing_container:hover .hover-description {
+  opacity: .6;
+}
+
+.hover-description {
+  opacity: 0;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: white;
+  text-align: left;
+}
+
+.hover-description hr {
+  margin-top: 2px;
+  margin-bottom: 5px;
+}
+
+.hover-description p {
+  margin-bottom: 0;
+}
+
+.hover-title {
+  font-size: 15px;
 }
 
 .thing_container {
@@ -20,12 +66,31 @@
   -o-transition: top 0.2s;
   -webkit-transition: top 0.2s;
   transition: top 0.2s;
-  // box-shadow: 1px 1px 1px grey;
+  background-color: white;
+  height: 173px;
+  width: 200px;
+  padding: 0;
+  position: relative;
 }
 
-.hovered {
-  top: -10px;
+.description {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  opacity: 0.6;
 }
+
+.description-content {
+  padding: 10px;
+  margin: 0px;
+  text-align: left;
+}
+
+// .hovered {
+//   top: -10px;
+// }
 
 .thing_container h3, .thing_container h4 {
   margin-top: 5px;
