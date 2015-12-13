@@ -16,7 +16,6 @@
   height: 173px;
   width: 200px;
   cursor: default;
-  display: block;
 }
 
 // .project_pic:hover {
@@ -61,7 +60,7 @@
 
 .thing_container {
   text-align: center;
-  margin-top: 30px;
+  margin: 30px auto 10px auto;
   -moz-transition: top 0.2s;
   -o-transition: top 0.2s;
   -webkit-transition: top 0.2s;
