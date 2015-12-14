@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    @articles = Article.where(published: true).order("created_at").limit(3)
-    @projects = Project.order("created_at").limit(3)
+    @articles = Article.where(published: true).order("created_at DESC").limit(3)
+    @projects = Project.order("created_at DESC").limit(3)
   end
 end
