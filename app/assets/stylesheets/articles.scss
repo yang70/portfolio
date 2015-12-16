@@ -133,7 +133,7 @@ img[alt=no-highlighting] {
 
 .show_thing {
   display: block;
-  p {
+  p, ul, ol {
     font-size: 18px;
   }
 }
