@@ -43,6 +43,7 @@ def get_readme(repo_name)
   https.use_ssl = true
 
   req = Net::HTTP::Get.new(uri.path, initheader = {'Accept' => 'application/vnd.github.v3.raw'})
+  req.basic_auth 'yang70', ENV['GITHUB_ACCESS']
 
   res = https.request(req)
 
