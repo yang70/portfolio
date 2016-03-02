@@ -56,7 +56,7 @@
 }
 
 #contact-container {
-  background-color: #36535A;
+  background-color: #202f33;
   width: 100%;
   padding-bottom: 30px;
   ul {
@@ -79,8 +79,20 @@
 
 #recent-blog {
   width: 100%;
-  background-color: #b2b2b2;
-  padding-bottom: 10px;
+  background-image: url('<%= asset_url "contact_bg_2.jpg" %>');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 550px;
+  padding: 0;
+  padding: 0;
+}
+
+#recent-blog-background {
+  color: #fff;
+  background-color: #2d2c2c;
+  opacity: 0.95;
+  height: 100%;
 }
 
 #about {
@@ -191,9 +203,9 @@ footer div {
 }
 
 .icon-secondary {
-  margin-top: 48px;
+  padding-top: 20px;
 }
 
 #contact-icon {
-  color: black;
+  color: white;
 }
