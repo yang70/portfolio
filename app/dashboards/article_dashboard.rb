@@ -18,6 +18,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     author_id: Field::Number,
     published: Field::Boolean,
     picture: Field::String,
+    description: Field::String,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -47,5 +48,6 @@ class ArticleDashboard < Administrate::BaseDashboard
     :author_id,
     :published,
     :picture,
+    :description,
   ]
 end

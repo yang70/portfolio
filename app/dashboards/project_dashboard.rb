@@ -16,6 +16,7 @@ class ProjectDashboard < Administrate::BaseDashboard
     image_url: Field::String,
     source: Field::String,
     source_url: Field::String,
+    description: Field::String,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -43,5 +44,6 @@ class ProjectDashboard < Administrate::BaseDashboard
     :image_url,
     :source,
     :source_url,
+    :description,
   ]
 end
