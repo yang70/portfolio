@@ -20,6 +20,7 @@
             <p class='hover-title'><strong><%= project.name %></strong></p>
             <hr />
             <p><%= project.description %></p>
+            <p><em><%= project.created_at.strftime("%m-%d-%Y") %></em></p>
           </div>
         </a>
       </div>
@@ -41,6 +42,7 @@
           <p class='hover-title'><strong><%= @projects[0].name %></strong></p>
           <hr />
           <p><%= @projects[0].description %></p>
+          <p><em><%= @projects[0].created_at.strftime("%m-%d-%Y") %></em></p>
         </div>
       </a>
     </div>

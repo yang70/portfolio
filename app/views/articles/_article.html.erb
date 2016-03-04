@@ -13,6 +13,7 @@
         <p class='hover-title'><strong><%= article.title %></strong></p>
         <hr />
         <p><%= article.description %></p>
+        <p><em><%= article.created_at.strftime("%m-%d-%Y") %></em></p>
       </div>
     </a>
   </div>

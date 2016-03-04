@@ -2,6 +2,7 @@
   <div class="col-md-6 col-md-offset-3 show_thing">
     <h3><%= @article.title %></h3>
     <h4><%= @article.description %></h4>
+    <p class="text-center"><em><%= @article.created_at.strftime("%m-%d-%Y") %></em></p>
 
     <% if @article.picture.present? %>
       <%= image_tag @article.picture.url, class: "show_pic" %>
