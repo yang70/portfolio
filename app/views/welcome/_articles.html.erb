@@ -1,65 +1,42 @@
 <div id="recent-blog" class="container">
   <div id="recent-blog-background" class="blog-container">
-    <div>
-      <div class="icon-container icon-secondary">
-        <i class="fa fa-quote-left fa-3x"><a class="section-header" href="/articles">Blog</a></i>
-      </div>
-      <div class="col-md-12 text-center">
-        <a href="<%= article_path @articles[0] %>" class="plain-links">
-          <% if @articles[0].picture.present? %>
-            <%= image_tag @articles[0].picture.url, class: "thing_pic" %>
-          <% else %>
-            <img class="thing_pic" src="https://s3.amazonaws.com/matthewgyang/images/headshot_square.png" alt="headshot">
-          <% end %>
-          <h2><%= @articles[0].title %></h2>
-          <p><em><%= @articles[0].created_at.strftime("%m-%d-%Y") %></em></p>
+    <div class="icon-container icon-secondary">
+      <i class="fa fa-quote-left fa-3x"><a class="section-header" href="/articles">Blog</a></i>
+    </div>
+    <div class="col-md-12 text-center">
+      <a href="<%= article_path @articles[0] %>" class="plain-links">
+        <% if @articles[0].picture.present? %>
+          <%= image_tag @articles[0].picture.url, class: "thing_pic" %>
+        <% else %>
+          <img class="thing_pic" src="https://s3.amazonaws.com/matthewgyang/images/headshot_square.png" alt="headshot">
+        <% end %>
+        <h2><%= @articles[0].title %></h2>
+        <p><em><%= @articles[0].created_at.strftime("%m-%d-%Y") %></em></p>
+      </a>
+      <hr class="main-blog-break"/>
+    </div>
+    <div class="col-md-12 text-center hidden-xs">
+      <div class="col-md-4 col-sm-4 secondary-blog">
+        <a href="<%= article_path @articles[1] %>" class="plain-links">
+          <h4><%= @articles[1].title %></h4>
+          <p><em><%= @articles[1].created_at.strftime("%m-%d-%Y") %></em></p>
         </a>
-        <hr class="main-blog-break"/>
       </div>
-      <div class="col-xs-12 visible-xs text-center">
-        <a href="/articles"><h4><em>More</em></h4></a>
+      <div class="col-md-4 col-sm-4 secondary-blog">
+        <a href="<%= article_path @articles[2] %>" class="plain-links">
+          <h4><%= @articles[2].title %></h4>
+          <p><em><%= @articles[2].created_at.strftime("%m-%d-%Y") %></em></p>
+        </a>
       </div>
-      <div class="col-md-12 text-center hidden-xs">
-        <div class="col-md-4 col-sm-4 secondary-blog">
-          <a href="<%= article_path @articles[1] %>" class="plain-links">
-            <h4><%= @articles[1].title %></h4>
-            <p><em><%= @articles[1].created_at.strftime("%m-%d-%Y") %></em></p>
-          </a>
-        </div>
-        <div class="col-md-4 col-sm-4 secondary-blog">
-          <a href="<%= article_path @articles[2] %>" class="plain-links">
-            <h4><%= @articles[2].title %></h4>
-            <p><em><%= @articles[2].created_at.strftime("%m-%d-%Y") %></em></p>
-          </a>
-        </div>
-        <div class="col-md-4 col-sm-4 secondary-blog">
-          <a href="<%= article_path @articles[3] %>" class="plain-links">
-            <h4><%= @articles[3].title %></h4>
-            <p><em><%= @articles[3].created_at.strftime("%m-%d-%Y") %></em></p>
-          </a>
-        </div>
+      <div class="col-md-4 col-sm-4 secondary-blog">
+        <a href="<%= article_path @articles[3] %>" class="plain-links">
+          <h4><%= @articles[3].title %></h4>
+          <p><em><%= @articles[3].created_at.strftime("%m-%d-%Y") %></em></p>
+        </a>
       </div>
-      <%# <% @articles.each do |article| %1> %>
-      <%#   <div class="col-md-4"> %>
-      <%#     <div class="thing_container"> %>
-      <%#         <a href="/articles/<%= article.id %1>"> %>
-      <%#           <% if article.picture.present? %1> %>
-      <%#             <%= image_tag article.picture.url, class: "thing_pic" %1> %>
-      <%#           <% else %1> %>
-      <%#             <img class="thing_pic" src="https://s3.amazonaws.com/matthewgyang/images/headshot_square.png" alt="headshot"> %>
-      <%#           <% end %1> %>
-      <%#           <div class='description'> %>
-      <%#             <p class='description-content'><%= article.title %1></p> %>
-      <%#           </div> %>
-      <%#           <div class='hover-description'> %>
-      <%#             <p class='hover-title'><strong><%= article.title %1></strong></p> %>
-      <%#             <hr /> %>
-      <%#             <p><%= article.description %1></p> %>
-      <%#           </div> %>
-      <%#         </a> %>
-      <%#     </div> %>
-      <%#   </div> %>
-      <%# <% end %1> %>
+    </div>
+    <div class="col-md-12 text-center">
+      <a href="/articles"><h4><em>More</em></h4></a>
     </div>
   </div>
 </div>

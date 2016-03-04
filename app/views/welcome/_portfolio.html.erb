@@ -3,6 +3,7 @@
     <i class="fa fa-code-fork fa-3x"><a class="section-header" href="/projects">Projects</a></i>
   </div>
   <a name="portfolio"></a>
+  <div class="col-md-12 hidden-xs hidden-sm">
   <% @projects.each do |project| %>
     <div class="col-md-4">
       <div class="thing_container">
@@ -24,4 +25,27 @@
       </div>
     </div>
   <% end %>
+  </div>
+  <div class="col-sm-12 visible-xs visible-sm">
+    <div class="thing_container">
+      <a href="/projects/<%= @projects[0].id %>">
+        <% if @projects[0].image_url.present? %>
+          <%= image_tag @projects[0].image_url , class: "project_pic" %>
+        <% else %>
+          <img class="project_pic" src="https://s3.amazonaws.com/matthewgyang/images/headshot_square.png" alt="headshot">
+        <% end %>
+        <div class='description'>
+          <p class='description-content'><%= @projects[0].name %></p>
+        </div>
+        <div class='hover-description'>
+          <p class='hover-title'><strong><%= @projects[0].name %></strong></p>
+          <hr />
+          <p><%= @projects[0].description %></p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="col-md-12 text-center">
+    <a href="/projects"><h4><em>More</em></h4></a>
+  </div>
 </div>
